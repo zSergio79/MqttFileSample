@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:FileUploadWithMqtt.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="FileUploadWithMqtt.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+  <DockPanel LastChildFill="True">
+    <TextBlock Text="{Binding ConnectStatus}" HorizontalAlignment="Left" VerticalAlignment="Center" DockPanel.Dock="Bottom" Margin="10 4"/>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" Spacing="15" Margin="30 10">
+      <Button Content="Import File" Command="{Binding ImportFile}"
+              HorizontalAlignment="Center" VerticalAlignment="Center" Padding="25 5"/>
+      <TextBlock Text="{Binding ImportedFile, StringFormat='Upload file: {0}'}" IsVisible="{Binding ImportedFile, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" HorizontalAlignment="Center"/>
+      <ProgressBar Minimum="0" Maximum="{Binding TotalParts}" Value="{Binding CurrentPart}" Height="10" IsVisible="{Binding ImportedFile, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+      <TextBlock Text="{Binding Message}"/>
+    </StackPanel>
+  </DockPanel>
+</UserControl>
