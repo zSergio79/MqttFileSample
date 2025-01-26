@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileUploader", "FileUploade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MqttFileExchanger", "MqttFileUploaderLib\MqttFileExchanger.csproj", "{E1279DBC-B38B-4981-AD43-AAFF7AE7E54B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reconnecting", "Reconnecting", "{E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectPublisherMqtt", "ReconnectPublisherMqtt\ReconnectPublisherMqtt.csproj", "{E4D22989-7D89-451F-B1CD-D544A931FF01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectPublisherMqtt.Desktop", "ReconnectPublisherMqtt.Desktop\ReconnectPublisherMqtt.Desktop.csproj", "{41B6DC7A-AF42-4AF2-A57A-4B7D82E85499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +49,14 @@ Global
 		{E1279DBC-B38B-4981-AD43-AAFF7AE7E54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1279DBC-B38B-4981-AD43-AAFF7AE7E54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1279DBC-B38B-4981-AD43-AAFF7AE7E54B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D22989-7D89-451F-B1CD-D544A931FF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D22989-7D89-451F-B1CD-D544A931FF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D22989-7D89-451F-B1CD-D544A931FF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D22989-7D89-451F-B1CD-D544A931FF01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41B6DC7A-AF42-4AF2-A57A-4B7D82E85499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B6DC7A-AF42-4AF2-A57A-4B7D82E85499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B6DC7A-AF42-4AF2-A57A-4B7D82E85499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B6DC7A-AF42-4AF2-A57A-4B7D82E85499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +67,7 @@ Global
 		{401C093F-2F66-4417-807D-712F9F0398BE} = {D0DEFBF4-272C-45A7-9ED4-B144D653BB28}
 		{3B9B6864-1D2D-483B-9756-7D36015EC88C} = {D0DEFBF4-272C-45A7-9ED4-B144D653BB28}
 		{E1279DBC-B38B-4981-AD43-AAFF7AE7E54B} = {EFDDE352-FE70-405F-9A52-58B3FCDFDF7B}
+		{E4D22989-7D89-451F-B1CD-D544A931FF01} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
+		{41B6DC7A-AF42-4AF2-A57A-4B7D82E85499} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
 	EndGlobalSection
 EndGlobal

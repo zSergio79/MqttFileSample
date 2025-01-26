@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ReconnectPublisherMqtt.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ReconnectPublisherMqtt.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <vm:MainViewModel />
+  </Design.DataContext>
+  <UserControl.Styles>
+    <Style Selector="TextBox">
+      <Setter Property="Margin" Value="4"/>
+    </Style>
+    <Style Selector="Button">
+      <Setter Property="Margin" Value="4"/>
+      <Setter Property="Padding" Value="25 4"/>
+    </Style>
+    <Style Selector="TextBlock">
+      <Setter Property="Margin" Value="4"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+    <Style Selector="Ellipse.Connected">
+      <Setter Property="Fill" Value="Green"/>
+    </Style>
+    <Style Selector="Ellipse.notConnected">
+      <Setter Property="Fill" Value="Red"/>
+    </Style>
+  </UserControl.Styles>
+  <DockPanel LastChildFill="True">
+    <Ellipse Width="20" Height="20" Stroke="Gray" StrokeThickness="1" DockPanel.Dock="Bottom" Margin="4" HorizontalAlignment="Left"
+             Classes.Connected="{Binding IsConnected}" Classes.notConnected="{Binding !IsConnected}"/>
+  <Grid RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="25">
+    <TextBlock Text="Host" Grid.Column="0" Grid.Row="0"/>
+    <TextBox Text="{Binding Host}" Grid.Column="1" Grid.Row="0"/>
+    <Button Content="Connect" Command="{Binding Connect}" Grid.Column="1" Grid.Row="1"/>
+    <TextBlock Text="Message" Grid.Column="0" Grid.Row="2"/>
+    <TextBox Text="{Binding Message}" Grid.Column="1" Grid.Row="2"/>
+    <Button Content="Start" Command="{Binding Start}" Grid.Column="0" Grid.Row="3"/>
+    <Button Content="Stop" Command="{Binding Stop}" Grid.Column="1" Grid.Row="3"/>
+  </Grid>
+  </DockPanel>
+</UserControl>
