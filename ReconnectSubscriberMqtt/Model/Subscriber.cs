@@ -65,6 +65,7 @@ namespace ReconnectSubscriberMqtt.Model
         }
         public async Task StartListen(string topic)
         {
+            //await StopListen();
             if(string.IsNullOrEmpty(topic))
                 throw new ArgumentNullException(nameof(topic));
 

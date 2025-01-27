@@ -59,7 +59,11 @@ public partial class MainViewModel : ViewModelBase
         };
         _mqttClient.DisconnectedAsync += async (o) => 
         {
-            RxApp.MainThreadScheduler.Schedule( _ => IsConnected = false);
+            RxApp.MainThreadScheduler.Schedule( _ => 
+            {
+                IsConnected = false; 
+                _subscriber?.StopListen();
+            });
             Debug.WriteLine($"Disconnect -- {o.Reason} -- [{DateTime.Now:HH:mm:ss}]");
         };
 
