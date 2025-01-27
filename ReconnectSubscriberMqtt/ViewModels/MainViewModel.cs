@@ -3,6 +3,8 @@
 using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
+using ReconnectMqttClient;
+
 using ReconnectSubscriberMqtt.Model;
 
 using System;
@@ -28,6 +30,7 @@ public partial class MainViewModel : ViewModelBase
     [Reactive] private bool _isConnected = false;
     [Reactive] private ObservableCollection<string> _messages = [];
     [Reactive] private int _maxMessages = 10;
+    [Reactive] private bool _isStarted = false;
     #endregion
 
     #region Commands
@@ -55,6 +58,8 @@ public partial class MainViewModel : ViewModelBase
         {
             RxApp.MainThreadScheduler.Schedule(_ =>  IsConnected = o.ConnectResult.ResultCode == MqttClientConnectResultCode.Success);
             Debug.WriteLine($"Connected - {o.ConnectResult.ResultCode} - [{DateTime.Now:HH:mm:ss}]");
+            if(IsStarted)
+                await DoStart();
             reenter = 0;
         };
         _mqttClient.DisconnectedAsync += async (o) => 
@@ -91,11 +96,13 @@ public partial class MainViewModel : ViewModelBase
     private async Task DoStart()
     {
         await _subscriber.StartListen(Topic);
+        IsStarted = true;
     }
 
     private async Task DoStop()
     {
         await _subscriber.StopListen();
+        IsStarted = false;
     }
     #endregion
 }

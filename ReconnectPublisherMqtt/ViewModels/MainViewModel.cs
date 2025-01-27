@@ -3,9 +3,12 @@
 using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
+using ReconnectMqttClient;
+
 using ReconnectPublisherMqtt.Model;
 
 using System.Reactive;
+using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Xml.Schema;
@@ -37,12 +40,20 @@ public partial class MainViewModel : ViewModelBase
     #region .ctor
     public MainViewModel()
     {
-        _mqttClient = new MqttClientFactory().CreateMqttClient();
-        
+        _mqttClient = new ReconnectableMqttClient( new MqttClientFactory().CreateMqttClient());
+
+        _mqttClient.ConnectedAsync += async (o) =>
+        {
+            RxApp.MainThreadScheduler.Schedule(() =>
+            {
+                IsConnected = o.ConnectResult.ResultCode == MqttClientConnectResultCode.Success;
+            });
+        };
+
         _mqttClient.DisconnectedAsync += async (o) => 
         {
-            IsConnected = false;
-            _publisher.Stop();
+            RxApp.MainThreadScheduler.Schedule(()=> IsConnected = false);
+            //_publisher.Stop();
         };
         _publisher = new Publisher(_mqttClient)
         {

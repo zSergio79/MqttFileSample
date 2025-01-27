@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "FileExchanger",
+    "Projects": [
+      {
+        "Path": "MqttFileUploader.Desktop\\FileUploadWithMqtt.Desktop.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MqttFileDownloader.Desktop\\FileDownloadWithMqtt.Desktop.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
