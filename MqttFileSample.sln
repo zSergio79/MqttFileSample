@@ -23,11 +23,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectPublisherMqtt", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectPublisherMqtt.Desktop", "ReconnectPublisherMqtt.Desktop\ReconnectPublisherMqtt.Desktop.csproj", "{41B6DC7A-AF42-4AF2-A57A-4B7D82E85499}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45D952FD-3B04-42C9-A763-A81B216DCC0B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectSubscriberMqtt", "ReconnectSubscriberMqtt\ReconnectSubscriberMqtt.csproj", "{F9712DED-221B-4EC9-9B6B-AB147C2054BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectSubscriberMqtt.Desktop", "ReconnectSubscriberMqtt.Desktop\ReconnectSubscriberMqtt.Desktop.csproj", "{1F1719DB-EE8F-469E-BA7E-5F3018B64304}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectMqttClient", "ReconnectMqttClient\ReconnectMqttClient.csproj", "{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +71,10 @@ Global
 		{1F1719DB-EE8F-469E-BA7E-5F3018B64304}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F1719DB-EE8F-469E-BA7E-5F3018B64304}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F1719DB-EE8F-469E-BA7E-5F3018B64304}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,8 +87,8 @@ Global
 		{E1279DBC-B38B-4981-AD43-AAFF7AE7E54B} = {EFDDE352-FE70-405F-9A52-58B3FCDFDF7B}
 		{E4D22989-7D89-451F-B1CD-D544A931FF01} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
 		{41B6DC7A-AF42-4AF2-A57A-4B7D82E85499} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
-		{45D952FD-3B04-42C9-A763-A81B216DCC0B} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
 		{F9712DED-221B-4EC9-9B6B-AB147C2054BD} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
 		{1F1719DB-EE8F-469E-BA7E-5F3018B64304} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
+		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
 	EndGlobalSection
 EndGlobal

@@ -23,4 +23,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReconnectMqttClient\ReconnectMqttClient.csproj" />
+  </ItemGroup>
 </Project>

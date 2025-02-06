@@ -52,6 +52,9 @@ namespace ReconnectPublisherMqtt.Model
         {
             try
             {
+                if (_mqttClient == null || !_mqttClient.IsConnected)
+                    return;
+
                 var messageBuilder = new MqttApplicationMessageBuilder()
                     .WithTopic(Topic)
                     .WithRetainFlag(true);
@@ -64,7 +67,7 @@ namespace ReconnectPublisherMqtt.Model
                     .WithPayload(payload)
                     .Build();
 
-                await _mqttClient?.PublishAsync(message);
+                await _mqttClient.PublishAsync(message);
             }
             catch
             { }
