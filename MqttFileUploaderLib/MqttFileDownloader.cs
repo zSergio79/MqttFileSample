@@ -16,7 +16,7 @@ namespace MqttFileExchanger
         #region Events
         public event EventHandler<string>? DownloadStarted;
         public event EventHandler<string>? DownloadCancelled;
-        public event EventHandler<bool>? DownloadCompleted;
+        public event EventHandler<string>? DownloadCompleted;
         public event EventHandler<MqttUploadFileProgressEventArgs>? DownloadProgress;
         #endregion
 
@@ -126,7 +126,8 @@ namespace MqttFileExchanger
                 if (_currentPart != part || _writer == null)
                 {
                     Debug.WriteLine($"download fail part#{_currentPart}");
-                    DownloadCompleted?.Invoke(this, false);
+                    DownloadCancelled?.Invoke(this, "invalid part");
+                    Close(false);
                     return;
                 }
 
@@ -151,11 +152,10 @@ namespace MqttFileExchanger
                 _writer?.Flush();
                 _writer?.Close();
                 _timeoutTimer.Change(Timeout.Infinite, Timeout.Infinite);
-                if (result)
-                    DownloadCompleted?.Invoke(this, true);
+                if (result && !string.IsNullOrEmpty(_filename))
+                    DownloadCompleted?.Invoke(this, _filename);
                 else
                 {
-                    DownloadCancelled?.Invoke(this, "Timeout");
                     if (File.Exists(_filename)) File.Delete(_filename);
                 }
             }
@@ -169,7 +169,10 @@ namespace MqttFileExchanger
         private void DownloadWatchDog(object? state)
         {
             if (_inprocess)
+            {
+                DownloadCancelled?.Invoke(this, "Timeout");
                 Close(false);
+            }
         }
         #endregion
     }

@@ -7,7 +7,7 @@ namespace MqttFileExchanger
         string Folder { get; set; }
 
         event EventHandler<string>? DownloadCancelled;
-        event EventHandler<bool>? DownloadCompleted;
+        event EventHandler<string>? DownloadCompleted;
         event EventHandler<MqttUploadFileProgressEventArgs>? DownloadProgress;
         event EventHandler<string>? DownloadStarted;
 

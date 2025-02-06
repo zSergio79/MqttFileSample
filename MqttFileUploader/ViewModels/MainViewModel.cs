@@ -26,7 +26,7 @@ public partial class MainViewModel : ViewModelBase
     #endregion
 
     #region Const
-    private const string topic = "fileExchanger";
+    private const string topic = "controlx";
     #endregion
 
     #region Commands

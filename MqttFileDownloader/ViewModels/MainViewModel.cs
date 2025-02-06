@@ -79,7 +79,7 @@ public partial class MainViewModel : ViewModelBase
 
         _mqttFileDownloader.DownloadCompleted += (o, e) =>
         {
-            DownloadStatus = $"Download completed with {e}.";
+            DownloadStatus = $"Download completed to {e}.";
         };
         _mqttFileDownloader.DownloadProgress += (o, e) =>
         {
