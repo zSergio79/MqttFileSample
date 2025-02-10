@@ -26,7 +26,7 @@ public partial class MainViewModel : ViewModelBase
     #endregion
 
     #region Const
-    private const string topic = "controlx";
+    private const string Topic = "controlx/state";
     #endregion
 
     #region Commands
@@ -46,7 +46,7 @@ public partial class MainViewModel : ViewModelBase
     {
         ImportFile = ReactiveCommand.CreateFromTask(DoImportFile);
 
-        RxApp.MainThreadScheduler.Schedule(() => InitMqtt());
+        RxApp.MainThreadScheduler.Schedule(InitMqtt);
     }
     #endregion
 
@@ -105,7 +105,7 @@ public partial class MainViewModel : ViewModelBase
         ConnectStatus = connectResult.ResultCode != MqttClientConnectResultCode.Success ? "Uploader Not Connected" : "Uploader Connected";
 
         _mqttFileUploader = new MqttFileUploaderBuilder(_mqttClient)
-           .WithRootTopic(topic)
+           .WithRootTopic(Topic)
            .WithTimeout(1000)
            .Build();
 
