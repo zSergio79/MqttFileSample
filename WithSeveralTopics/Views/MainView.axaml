@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:WithSeveralTopics.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="WithSeveralTopics.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <vm:MainViewModel />
+  </Design.DataContext>
+  <UserControl.Styles>
+    <Style Selector="Button">
+      <Setter Property="Padding" Value="25 2"/>
+      <Setter Property="Margin" Value="4 1"/>
+    </Style>
+  </UserControl.Styles>
+  <Grid RowDefinitions="*,*,auto,auto">
+    <ListBox Grid.Row="0" ItemsSource="{Binding Topics}" BorderBrush="Gray" BorderThickness="1" Padding="2" Margin="4"/>
+    <ListBox Grid.Row="1" ItemsSource="{Binding LastMessages}" BorderBrush="Gray" BorderThickness="1" Padding="2" Margin="4"/>
+    <TextBox Grid.Row="2" Text="{Binding TopicForAdd}" Margin="4" BorderBrush="Gray" BorderThickness="1"/>
+    <DockPanel LastChildFill="False" Grid.Row="3" Margin="4">
+      <Button Content="Add Topic" Command="{Binding AddTopic}"/>
+      <Button Content="ReSubscribe" Command="{Binding ReSubscribe}"/>
+      <Button Content="Clear Topics" Command="{Binding ClearTopics}"/>
+      <Button Content="Exit" DockPanel.Dock="Right"/>
+    </DockPanel>
+  </Grid>
+</UserControl>

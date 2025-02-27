@@ -29,6 +29,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectSubscriberMqtt.Des
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconnectMqttClient", "ReconnectMqttClient\ReconnectMqttClient.csproj", "{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SeveralTopics", "SeveralTopics", "{91DD5E0E-C224-44C8-B68D-772200028284}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithSeveralTopics", "WithSeveralTopics\WithSeveralTopics.csproj", "{98FC7865-CFD1-4438-8554-A337141F5F12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithSeveralTopics.Desktop", "WithSeveralTopics.Desktop\WithSeveralTopics.Desktop.csproj", "{8DFB766B-6A3C-42B9-A822-5766F34695ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +81,14 @@ Global
 		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FC7865-CFD1-4438-8554-A337141F5F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FC7865-CFD1-4438-8554-A337141F5F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FC7865-CFD1-4438-8554-A337141F5F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FC7865-CFD1-4438-8554-A337141F5F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DFB766B-6A3C-42B9-A822-5766F34695ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DFB766B-6A3C-42B9-A822-5766F34695ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DFB766B-6A3C-42B9-A822-5766F34695ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DFB766B-6A3C-42B9-A822-5766F34695ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,5 +104,7 @@ Global
 		{F9712DED-221B-4EC9-9B6B-AB147C2054BD} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
 		{1F1719DB-EE8F-469E-BA7E-5F3018B64304} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
 		{C8F5F004-BDBF-4F18-8DB5-45B298B7DAEB} = {E9BCA426-A769-4EEB-8C03-EA6E9EF3BEF0}
+		{98FC7865-CFD1-4438-8554-A337141F5F12} = {91DD5E0E-C224-44C8-B68D-772200028284}
+		{8DFB766B-6A3C-42B9-A822-5766F34695ED} = {91DD5E0E-C224-44C8-B68D-772200028284}
 	EndGlobalSection
 EndGlobal

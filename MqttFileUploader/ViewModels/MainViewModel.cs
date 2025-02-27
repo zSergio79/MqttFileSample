@@ -1,4 +1,4 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 using Avalonia.Platform.Storage;
 
 using MqttFileExchanger;
@@ -86,7 +86,7 @@ public partial class MainViewModel : ViewModelBase
     #region Mqtt Operations
     private async void InitMqtt()
     {
-        string broker = "localhost";
+        string broker = "192.168.40.60";
         int port = 1883;
         string clientId = Guid.NewGuid().ToString();
 
