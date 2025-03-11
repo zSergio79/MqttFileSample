@@ -26,7 +26,7 @@ public partial class MainViewModel : ViewModelBase
     #endregion
 
     #region Const
-    private const string Topic = "controlx/state";
+    private const string Topic = "intiled_controlx/Office/state";
     #endregion
 
     #region Commands
